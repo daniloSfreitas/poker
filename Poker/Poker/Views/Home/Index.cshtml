@@ -1,10 +1,21 @@
-﻿
+﻿@{ 
+    ViewBag.Title = "Index";
+}
 <div class="jumbotron">
-  
+   @foreach (var i in Model)
+   {
+       <p>@i.Nome</p>
+
+       foreach (var c in @i.Cartas)
+       {
+        <p>@c.Nipe@c.Valor</p>
+       }
+   }
 </div>
 
 <div class="row">
     <div class="col-md-4">
+
         
     </div>
 

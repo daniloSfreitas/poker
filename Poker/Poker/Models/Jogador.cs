@@ -8,9 +8,10 @@ namespace Poker.Models
     public class Jogador
     {
         private String nome;
-        private List<Carta> Cartas;
+        private List<Carta> cartas;
 
+        public List<Carta> Cartas { get => cartas; set => cartas = value; }
         public string Nome { get => nome; set => nome = value; }
-        public List<Carta> Cartas1 { get => Cartas; set => Cartas = value; }
+        public List<Jogador> Add { get; internal set; }
     }
 }
