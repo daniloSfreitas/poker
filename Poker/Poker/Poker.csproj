@@ -146,7 +146,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Baralho.cs" />
+    <Compile Include="Models\Carta.cs" />
+    <Compile Include="Models\Jogador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\UtiBaralho.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -186,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
