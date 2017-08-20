@@ -4,7 +4,7 @@
 <div class="jumbotron">
    @foreach (var i in Model)
    {
-       <p>@i.Nome</p>
+       <p>@i.Nome @i.Combinacao</p>
 
        foreach (var c in @i.Cartas)
        {
