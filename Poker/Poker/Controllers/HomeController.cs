@@ -20,7 +20,7 @@ namespace Poker.Controllers
 
             Random rnd = new Random();
 
-            for (int i= 0; i < 26; i++){
+            for (int i= 0; i < 5; i++){
                 int a = rnd.Next(0, baralho.Cartas.Count);
                 mao.Add(baralho.Cartas[a]);
                 baralho.Cartas.RemoveAt(a);
