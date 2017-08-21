@@ -32,12 +32,40 @@ namespace Poker.Controllers
 
             List<Jogador> jogadores = new List<Jogador>();
 
+            List<Carta> maoforca = new List<Carta>();
+
+            Carta carta1 = new Carta();
+            carta1.Nipe = "C";
+            carta1.Valor = "4";
+            maoforca.Add(carta1);
+
+            Carta carta2 = new Carta();
+            carta2.Nipe = "O";
+            carta2.Valor = "4";
+            maoforca.Add(carta2);
+
+            Carta carta3 = new Carta();
+            carta3.Nipe = "E";
+            carta3.Valor = "4";
+            maoforca.Add(carta3);
+
+            Carta carta4 = new Carta();
+            carta4.Nipe = "E";
+            carta4.Valor = "9";
+            maoforca.Add(carta4);
+
+            Carta carta5 = new Carta();
+            carta5.Nipe = "O";
+            carta5.Valor = "4";
+            maoforca.Add(carta5);
+
             Jogador jogador1 = new Jogador();
             jogador1.Nome = "Adversário";
-            jogador1.Cartas = mao;
+            jogador1.Cartas = maoforca;
             
 
-            jogadores.Add(jogador1);          
+            jogadores.Add(jogador1);
+            verificarRank(jogador1);
 
            
             Jogador jogador2 = new Jogador();
@@ -45,8 +73,23 @@ namespace Poker.Controllers
             jogador2.Cartas = mao2;
 
             jogadores.Add(jogador2);
+            //verificarRank(jogador2);
 
-            
+            if (jogador1.Rank > jogador2.Rank)
+            {
+                jogador1.Resultado = "Vitoria";
+                jogador2.Resultado = "Derrota";
+                
+            }
+            else if (jogador1.Rank < jogador2.Rank)
+            {
+                jogador1.Resultado = "Derrota";
+                jogador2.Resultado = "Vitoria";
+            }
+            else {
+                jogador1.Resultado = "Empate";
+                jogador2.Resultado = "Empate";
+            }
             return View(jogadores);
         }
 
@@ -83,9 +126,11 @@ namespace Poker.Controllers
             }
             else if (utilBaralho.IsSequencia(jogador))
             {
-                jogador.Rank = 5;
+               jogador.Rank = 5;
                 jogador.Combinacao = "Straight";
             }
+
+           
 
             else if (utilBaralho.IsTrinca(jogador))
             {
@@ -93,11 +138,13 @@ namespace Poker.Controllers
                 jogador.Rank = 4;
                 jogador.Combinacao = "Trinca";
             }
+
             else if (utilBaralho.IsDoiPares(jogador))
             {
                 jogador.Rank = 3;
                 jogador.Combinacao = "Dois Pares";
             }
+
 
             else if (utilBaralho.IsPar(jogador))
             {
@@ -105,13 +152,17 @@ namespace Poker.Controllers
                 jogador.Rank = 2;
                 jogador.Combinacao = "Par";
             }
-            else if (utilBaralho.IsMaiorCarta(jogador))
+            else 
             {
                 jogador.Rank = 1;
                 jogador.Combinacao = "Maior Carta";
             }
 
+
+
         }
+
+
 
 
     } 

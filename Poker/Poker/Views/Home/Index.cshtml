@@ -2,13 +2,15 @@
     ViewBag.Title = "Index";
 }
 <div class="jumbotron">
-   @foreach (var i in Model)
-   {
-       <p>@i.Nome @i.Combinacao</p>
+       @foreach (var i in Model)
+       {
+        <p>@i.Nome @i.Combinacao @i.Resultado</p>
 
        foreach (var c in @i.Cartas)
        {
-        <p>@c.Nipe@c.Valor</p>
+        
+        <img src="~/Content/Img/@(c.Valor+c.Nipe).png" width="80" />
+
        }
    }
 
@@ -18,7 +20,7 @@
     <div class="col-md-4">
 
 
-        <img src="~/Content/Img/Mesa.png" />
+        <img src="~/Content/Img/.png" />
     </div>
 
     <div class="col-md-4">
