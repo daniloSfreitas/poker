@@ -8,8 +8,18 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+<style type="text/css">
+    body {
+        background-image: url(../../Content/Img/Mesa.png);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        padding-top: 180px;
+        padding-bottom: 144px;
+    }
+</style>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class=" image navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,17 +35,16 @@
                 <img src="~/Content/Img/Poker.png" />
 
                 <ul class="nav navbar-nav">                    
-                    <li>@Html.ActionLink("Regras", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                   
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Poker ASC Solutions</p>
+            <div  style="color:white;"</div>
+            <p>&copy; @DateTime.Now.Year - Poker ASC Solutions </p>
         </footer>
     </div>
 

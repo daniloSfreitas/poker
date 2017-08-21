@@ -32,36 +32,10 @@ namespace Poker.Controllers
 
             List<Jogador> jogadores = new List<Jogador>();
 
-            List<Carta> maoforca = new List<Carta>();
-
-            Carta carta1 = new Carta();
-            carta1.Nipe = "C";
-            carta1.Valor = "4";
-            maoforca.Add(carta1);
-
-            Carta carta2 = new Carta();
-            carta2.Nipe = "O";
-            carta2.Valor = "4";
-            maoforca.Add(carta2);
-
-            Carta carta3 = new Carta();
-            carta3.Nipe = "E";
-            carta3.Valor = "4";
-            maoforca.Add(carta3);
-
-            Carta carta4 = new Carta();
-            carta4.Nipe = "E";
-            carta4.Valor = "9";
-            maoforca.Add(carta4);
-
-            Carta carta5 = new Carta();
-            carta5.Nipe = "O";
-            carta5.Valor = "4";
-            maoforca.Add(carta5);
-
+           
             Jogador jogador1 = new Jogador();
             jogador1.Nome = "Adversário";
-            jogador1.Cartas = maoforca;
+            jogador1.Cartas = mao;
             
 
             jogadores.Add(jogador1);
@@ -73,7 +47,7 @@ namespace Poker.Controllers
             jogador2.Cartas = mao2;
 
             jogadores.Add(jogador2);
-            //verificarRank(jogador2);
+            verificarRank(jogador2);
 
             if (jogador1.Rank > jogador2.Rank)
             {

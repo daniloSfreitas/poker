@@ -1,34 +1,23 @@
 ﻿@{ 
     ViewBag.Title = "Index";
 }
-<div class="jumbotron">
-       @foreach (var i in Model)
-       {
-        <p>@i.Nome @i.Combinacao @i.Resultado</p>
 
-       foreach (var c in @i.Cartas)
-       {
-        
-        <img src="~/Content/Img/@(c.Valor+c.Nipe).png" width="80" />
 
-       }
-   }
+<div>
+
 
 </div>
+<div align="center">
+    @foreach (var i in Model)
+    {
+        <div align="center" style="color:white;">@i.Nome @i.Combinacao @i.Resultado</div>
 
-<div class="row">
-    <div class="col-md-4">
+        foreach (var c in @i.Cartas)
+        {
 
+            <img src="~/Content/Img/@(c.Valor+c.Nipe).png" width="80" />
 
-        <img src="~/Content/Img/.png" />
-    </div>
+        }
+    }
 
-    <div class="col-md-4">
-
-    </div>
-
-    <div class="col-md-4">
-
-    </div>
-
-</div>
+</div> 
